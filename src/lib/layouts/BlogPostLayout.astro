@@ -1,0 +1,21 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+import BlogPostHero from "@components/BlogPostHero.astro";
+import Navbar from "@components/Navbar.astro";
+
+import "@styles/blog-post-styles.css";
+
+const { title, description, pubDate, tags, coverImage, coverAlt } = Astro.props;
+---
+
+<BaseLayout {title} {description}>
+    <Navbar isBlogPost={true} />
+    <main data-pagefind-body>
+        <BlogPostHero {title} {pubDate} {coverImage} {coverAlt} />
+        <article class="wrapper">
+            <div class="blog-post-styles mx-auto my-fluid">
+                <slot />
+            </div>
+        </article>
+    </main>
+</BaseLayout>

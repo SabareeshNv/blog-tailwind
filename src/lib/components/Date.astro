@@ -1,0 +1,14 @@
+---
+const { pubDate, ...props } = Astro.props;
+
+const fullDate = pubDate.toISOString();
+const localDateString = pubDate.toLocaleDateString("en-us", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+});
+---
+
+<div {...props}>
+    <time datetime={fullDate}>{localDateString}</time>
+</div>

@@ -1,0 +1,40 @@
+---
+import Date from "./Date.astro";
+import { Image } from "astro:assets";
+
+const { title, pubDate, coverImage, coverAlt } = Astro.props;
+---
+
+<section class="relative">
+    <Image
+        src={coverImage}
+        alt={coverAlt}
+        loading={"eager"}
+        fetchpriority={"high"}
+        decoding={"sync"}
+        class="hero-image w-full aspect-video"
+    />
+    <div class="max-w-4xl mx-auto px-6">
+        <div
+            class="absolute bottom-4 md:bottom-8 lg:bottom-10 text-neutral-100"
+        >
+            <Date
+                {pubDate}
+                class="text-lg lg:text-xl mb-2 lg:mb-4 text-shadow italic"
+            />
+            <h1
+                class="hero-title text-3xl lg:text-4xl xl:text-5xl font-bold font-serif text-shadow"
+            >
+                {title}
+            </h1>
+        </div>
+    </div>
+</section>
+
+<style is:inline>
+    .hero-image {
+        filter: brightness(0.7);
+        background-color: rgb(55, 65, 81);
+        z-index: -1;
+    }
+</style>

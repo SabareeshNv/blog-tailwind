@@ -1,0 +1,16 @@
+.blog-post-styles {
+    @apply prose prose-lg text-stone-900 marker:text-stone-800;
+    @apply prose-headings:font-serif prose-a:underline-offset-8;
+
+    overflow-wrap: break-word;
+    /* So long texts don't cause overflow */
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        margin-bottom: 1rem;
+    }
+}

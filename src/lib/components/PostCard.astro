@@ -1,0 +1,26 @@
+---
+import { Image } from "astro:assets";
+import Date from "./Date.astro";
+
+const { post, smallCard = false, isFirstPost = false } = Astro.props;
+const { title, pubDate, summary, coverImage, coverAlt } = post.data;
+---
+
+<article>
+    <a href={`/post/${post.slug}/`}>
+        <Image src={coverImage} alt={coverAlt} class="w-full aspect-video" />
+    </a>
+
+    <div class="mt-4">
+        <Date {pubDate} class="mb-2 italic" />
+
+        <h2
+            class={`font-serif font-medium leading-heading ${isFirstPost ? "text-3xl" : "text-2xl"}`}
+        >
+            <a href={`/post/${post.slug}/`}>{title}</a>
+        </h2>
+
+        {/* only render if noSummary is false which is the default */}
+        {smallCard ? null : <div class="leading-tight mt-4">{summary}</div>}
+    </div>
+</article>

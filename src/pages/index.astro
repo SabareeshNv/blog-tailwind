@@ -1,0 +1,83 @@
+---
+import PageLayout from "@layouts/PageLayout.astro";
+import PostCard from "@components/PostCard.astro";
+import Search from "astro-pagefind/components/Search";
+import TagCloud from "@components/TagCloud.astro";
+
+import { fetchAndFilterPosts } from "@utils/helpers";
+
+const posts = await fetchAndFilterPosts();
+const firstFivePosts = posts.slice(0, 5);
+const restOfPosts = posts.slice(5);
+const isEmpty = Object.keys(restOfPosts).length;
+
+const title = "TheLoneVoice";
+const description = "Welcome to my blog";
+---
+
+<PageLayout {title} {description}>
+	<div class="wrapper">
+		<section class="my-fluid">
+			<h1 class="section-heading font-serif text-xl lg:text-2xl mb-2">
+				LATEST POSTS
+			</h1>
+
+			<div class="grid gap-8 md:grid-cols-2">
+				<div class="first-post py-4">
+					{
+						firstFivePosts
+							.slice(0, 1)
+							.map((post) => (
+								<PostCard {post} isFirstPost={true} />
+							))
+					}
+				</div>
+				<div class="grid gap-x-4 gap-y-8 sm:grid-cols-2 py-4">
+					{
+						firstFivePosts
+							.slice(1)
+							.map((post) => <PostCard {post} smallCard={true} />)
+					}
+				</div>
+			</div>
+		</section>
+
+		{
+			isEmpty > 0 ? (
+				<section class="my-fluid">
+					<h1 class="section-heading font-serif text-xl lg:text-2xl mb-2">
+						OLDER POSTS
+					</h1>
+					<div class="grid lg:grid-cols-4 gap-6">
+						<div class="lg:col-span-3">
+							<div class="fluid-cards py-4">
+								{restOfPosts.map((post) => (
+									<PostCard {post} />
+								))}
+							</div>
+						</div>
+						<aside data-pagefind-ignore>
+							<Search className="py-4 font-sans" />
+							<TagCloud />
+						</aside>
+					</div>
+				</section>
+			) : null
+		}
+	</div>
+</PageLayout>
+
+<style>
+	.first-post {
+		@media (min-width: 768px) {
+			border-right: 1px solid hsla(24, 10%, 10%, 0.664);
+			padding-right: 2rem;
+		}
+	}
+
+	body {
+		--pagefind-ui-border: hsla(24, 10%, 10%, 0.627);
+		--pagefind-ui-border-radius: 4px;
+		--pagefind-ui-font: "Alegreya Sans", ui-sans-serif, sans-serif;
+	}
+</style>

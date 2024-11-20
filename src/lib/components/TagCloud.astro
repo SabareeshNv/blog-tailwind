@@ -1,0 +1,30 @@
+---
+import { fetchAndFilterPosts, generateTagData } from "@utils/helpers";
+
+const posts = await fetchAndFilterPosts();
+
+const uniqueTags = [
+    ...new Set(posts.flatMap((post) => post.data.tags)),
+] as string[];
+
+const tagData: { name: string; slug: string }[] = generateTagData(uniqueTags);
+---
+
+<div class="my-fluid">
+    <div class="text-xl lg:text-2xl heading italic">Topics</div>
+    <p class="mt-2 mb-3 text-sm">
+        Here are all the topics i've posts written about
+    </p>
+    <div class="flex flex-wrap gap-2">
+        {
+            tagData.map((tag) => (
+                <a
+                    href={`/tag/${tag.slug}`}
+                    class="bg-neutral-100 py-2 px-1 rounded text-sm hover:bg-neutral-200"
+                >
+                    {tag.name}
+                </a>
+            ))
+        }
+    </div>
+</div>

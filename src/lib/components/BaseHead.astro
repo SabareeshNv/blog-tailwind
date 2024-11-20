@@ -1,0 +1,45 @@
+---
+import "@styles/tailwind.css";
+// Alegreya font
+import "@fontsource/alegreya/400.css";
+import "@fontsource/alegreya/500.css";
+// Alegreya Sans font
+import "@fontsource/alegreya-sans/300.css";
+import "@fontsource/alegreya-sans/400.css";
+import "@fontsource/alegreya-sans/400-italic.css";
+import "@fontsource/alegreya-sans/500.css";
+
+const { title, description } = Astro.props;
+---
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+{/* Primary Meta Tags */}
+<title>{title}</title>
+<meta name="title" content={title} />
+<meta name="description" content={description} />
+
+{/* OG Metadata - Facebook and others use it */}
+<meta property="og:type" content="website" />
+<meta property="og:url" content={Astro.url} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+
+{/* Twitter metadata */}
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:url" content={Astro.url} />
+<meta property="twitter:title" content={title} />
+<meta property="twitter:description" content={description} />
+
+{/* Robots.txt equivalent */}
+<meta name="robots" content="index,follow" />
+
+{/* RSS feed auto-discovery */}
+<link
+    rel="alternate"
+    type="application/rss+xml"
+    title="LoneVoice.in"
+    href={`${Astro.site}rss.xml`}
+/>
