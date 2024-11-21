@@ -18,12 +18,12 @@ const description = "Welcome to my blog";
 <PageLayout {title} {description}>
 	<div class="wrapper">
 		<section class="my-fluid">
-			<h1 class="section-heading font-serif text-2xl mb-2">
+			<h1 class="section-heading font-serif text-xl mb-4">
 				LATEST &ThinSpace; POSTS
 			</h1>
 
-			<div class="grid gap-12 md:grid-cols-2">
-				<div class="first-post py-4">
+			<div class="grid gap-6 md:grid-cols-2">
+				<div class="first-post">
 					{
 						firstFivePosts
 							.slice(0, 1)
@@ -32,7 +32,7 @@ const description = "Welcome to my blog";
 							))
 					}
 				</div>
-				<div class="grid gap-x-4 gap-y-12 sm:grid-cols-2 py-4">
+				<div class="grid gap-6 sm:grid-cols-2">
 					{
 						firstFivePosts
 							.slice(1)
@@ -45,12 +45,12 @@ const description = "Welcome to my blog";
 		{
 			isEmpty > 0 ? (
 				<section class="my-fluid">
-					<h1 class="section-heading font-serif text-2xl mb-2">
+					<h1 class="section-heading font-serif text-xl mb-4">
 						OLDER &ThinSpace; POSTS
 					</h1>
-					<div class="grid lg:grid-cols-4 gap-x-8 gap-y-12">
+					<div class="grid lg:grid-cols-4 gap-6">
 						<div class="lg:col-span-3">
-							<div class="fluid-cards py-4">
+							<div class="fluid-cards">
 								{restOfPosts.map((post) => (
 									<PostCard {post} />
 								))}
@@ -68,13 +68,6 @@ const description = "Welcome to my blog";
 </PageLayout>
 
 <style>
-	.first-post {
-		@media (min-width: 768px) {
-			border-right: 1px solid hsla(24, 10%, 10%, 0.664);
-			padding-right: 2rem;
-		}
-	}
-
 	body {
 		--pagefind-ui-border: hsla(24, 10%, 10%, 0.627);
 		--pagefind-ui-border-radius: 4px;

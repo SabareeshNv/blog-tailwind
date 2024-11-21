@@ -10,7 +10,7 @@ export default {
                 "serif": ["Alegreya", ...defaultTheme.fontFamily.serif],
             },
             spacing: {
-                'fluid': 'clamp(1.5rem, 3vw, 2rem)',
+                'fluid': 'clamp(2rem, 3vw, 4rem)',
             },
             lineHeight: {
                 'heading': '1.2',

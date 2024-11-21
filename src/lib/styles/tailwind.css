@@ -48,7 +48,7 @@ img {
 
 .fluid-cards {
     display: grid;
-    gap: 1rem;
+    gap: 1.5rem;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 }
 
@@ -62,4 +62,8 @@ img {
     margin-top: 10px;
     height: 3px;
     background-color: #1c1917;
+}
+
+.gentium {
+    font-family: "Gentium Plus", serif;
 }

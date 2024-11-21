@@ -4,7 +4,7 @@ summary: "Apart from the partisan politics, why i believe EVMs warrant a critica
 description: "This blog post discuss why electonic voting machine or EVMs as called in India warrants a critical look"
 pubDate: "2024-05-08"
 tags: ["Election Reform", "India", "Democracy", "Polity"]
-coverImage: "@images/post/india.webp"
+coverImage: "@images/post/vvpat.jpg"
 coverAlt: "Picture of evm with vvpat alongsides"
 ---
 

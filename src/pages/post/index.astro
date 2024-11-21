@@ -11,10 +11,10 @@ const description = "Welcome to my blog";
 
 <PageLayout {title} {description}>
     <div class="wrapper my-fluid">
-        <h1 class="section-heading font-serif text-2xl mb-2">
+        <h1 class="section-heading font-serif text-xl mb-4">
             ALL &ThinSpace;POSTS
         </h1>
-        <div class="fluid-cards py-4">
+        <div class="fluid-cards">
             {posts.map((post) => <PostCard {post} />)}
         </div>
     </div>
