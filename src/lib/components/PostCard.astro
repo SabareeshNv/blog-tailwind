@@ -8,23 +8,22 @@ const { title, pubDate, summary, coverImage, coverAlt } = post.data;
 
 <article>
     <a href={`/post/${post.slug}/`}>
-        <Image
-            src={coverImage}
-            alt={coverAlt}
-            class="w-full aspect-video min-h-[200px]"
-        />
+        <Image src={coverImage} alt={coverAlt} class="w-full aspect-video" />
     </a>
 
-    <div class="mt-4">
+    <div class="mt-2">
         <Date {pubDate} class="mb-2 italic" />
 
         <h2
-            class={`font-serif font-medium leading-heading ${isFirstPost ? "text-xl lg:text-2xl" : "text-xl"}`}
+            class={`font-serif font-medium leading-heading ${isFirstPost ? "text-2xl" : "text-xl"}`}
         >
             <a href={`/post/${post.slug}/`}>{title}</a>
         </h2>
 
         {/* only render if noSummary is false which is the default */}
-        {smallCard ? null : <div class="leading-tight mt-4">{summary}</div>}
+        <!-- {smallCard ? null : <div class="leading-tight mt-4">{summary}</div>} -->
+        <div class={`leading-tight mt-4 ${smallCard ? "md:hidden" : ""}`}>
+            {summary}
+        </div>
     </div>
 </article>

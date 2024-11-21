@@ -13,7 +13,7 @@ export default {
                 'fluid': 'clamp(1.5rem, 3vw, 2rem)',
             },
             lineHeight: {
-                'heading': '1.1',
+                'heading': '1.2',
             }
             // typography: {
             //     DEFAULT: {
