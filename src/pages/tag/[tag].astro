@@ -1,0 +1,52 @@
+---
+import PageLayout from "@layouts/PageLayout.astro";
+import PostCard from "@components/PostCard.astro";
+
+import {
+    fetchAndFilterPosts,
+    generateTagData,
+    unslugify,
+} from "@utils/helpers";
+
+export async function getStaticPaths() {
+    const posts = await fetchAndFilterPosts();
+
+    const uniqueTags = [
+        ...new Set(posts.flatMap((post) => post.data.tags)),
+    ] as string[];
+
+    const tagData: { name: string; slug: string }[] =
+        generateTagData(uniqueTags);
+
+    return tagData.map((tag) => {
+        const taggedPosts = posts.filter((post) =>
+            post.data.tags.includes(tag.name),
+        );
+
+        return {
+            params: { tag: tag.slug },
+            props: { posts: taggedPosts },
+        };
+    });
+}
+
+const { tag } = Astro.params;
+const { posts } = Astro.props;
+
+const title = `Posts about ${unslugify(tag)} | LoneVoice.in`;
+const description = `Posts about ${tag} | LoneVoice.in`;
+---
+
+<PageLayout {title} {description}>
+    <main class="wrapper my-fluid">
+        <h1 class="text-2xl xl:text-3xl section-heading">
+            Posts about &mdash; <span class="font-medium italic"
+                >{`${unslugify(tag)} `}</span
+            >
+        </h1>
+
+        <div class="fluid-cards mt-8">
+            {posts.map((post) => <PostCard {post} />)}
+        </div>
+    </main>
+</PageLayout>

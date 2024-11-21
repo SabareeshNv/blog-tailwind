@@ -1,6 +1,6 @@
 .blog-post-styles {
     @apply prose prose-lg text-stone-900 marker:text-stone-800;
-    @apply prose-headings:font-serif prose-a:underline-offset-8;
+    @apply prose-headings:font-medium prose-a:underline-offset-8;
 
     overflow-wrap: break-word;
     /* So long texts don't cause overflow */

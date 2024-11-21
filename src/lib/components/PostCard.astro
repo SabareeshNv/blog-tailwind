@@ -8,14 +8,18 @@ const { title, pubDate, summary, coverImage, coverAlt } = post.data;
 
 <article>
     <a href={`/post/${post.slug}/`}>
-        <Image src={coverImage} alt={coverAlt} class="w-full aspect-video" />
+        <Image
+            src={coverImage}
+            alt={coverAlt}
+            class="w-full aspect-video min-h-[200px]"
+        />
     </a>
 
     <div class="mt-4">
         <Date {pubDate} class="mb-2 italic" />
 
         <h2
-            class={`font-serif font-medium leading-heading ${isFirstPost ? "text-3xl" : "text-2xl"}`}
+            class={`font-serif font-medium leading-heading ${isFirstPost ? "text-xl lg:text-2xl" : "text-xl"}`}
         >
             <a href={`/post/${post.slug}/`}>{title}</a>
         </h2>

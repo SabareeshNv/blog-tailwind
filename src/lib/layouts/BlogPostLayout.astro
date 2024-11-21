@@ -12,10 +12,8 @@ const { title, description, pubDate, tags, coverImage, coverAlt } = Astro.props;
     <Navbar isBlogPost={true} />
     <main data-pagefind-body>
         <BlogPostHero {title} {pubDate} {coverImage} {coverAlt} />
-        <article class="wrapper">
-            <div class="blog-post-styles mx-auto my-fluid">
-                <slot />
-            </div>
+        <article class="wrapper blog-post-styles mx-auto">
+            <slot />
         </article>
     </main>
 </BaseLayout>
