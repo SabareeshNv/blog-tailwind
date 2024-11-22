@@ -14,7 +14,7 @@ const { isBlogPost = false } = Astro.props;
         <div class="text-center sm:text-left">
             <a
                 href="/"
-                class={` text-xl font-medium font-serif ${isBlogPost ? "text-stone-900" : "text-neutral-50"}`}
+                class={` text-2xl font-medium font-serif ${isBlogPost ? "text-stone-900" : "text-stone-50"}`}
                 >Lone Voice</a
             >
         </div>
@@ -25,7 +25,7 @@ const { isBlogPost = false } = Astro.props;
                     <li>
                         <a
                             href={item.link}
-                            class={` sm:ml-8 md:ml-12 ${isBlogPost ? "text-stone-900" : "text-neutral-100"}`}
+                            class={` sm:ml-8 md:ml-12 text-lg ${isBlogPost ? "text-stone-900" : "text-stone-100"}`}
                         >
                             {item.text}
                         </a>

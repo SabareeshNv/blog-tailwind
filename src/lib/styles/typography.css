@@ -1,4 +1,4 @@
-.blog-post-styles {
+.typography {
     @apply prose prose-lg text-stone-900 marker:text-stone-800;
     @apply prose-headings:font-serif prose-headings:font-medium;
     @apply prose-a:underline prose-a:underline-offset-4 prose-a:decoration-2 prose-a:text-red-700 prose-a:italic;

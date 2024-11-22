@@ -3,7 +3,7 @@ import BaseLayout from "./BaseLayout.astro";
 import BlogPostHero from "@components/BlogPostHero.astro";
 import Navbar from "@components/Navbar.astro";
 
-import "@styles/blog-post-styles.css";
+import "@styles/typography.css";
 
 const { title, description, pubDate, tags, coverImage, coverAlt } = Astro.props;
 ---
@@ -12,8 +12,10 @@ const { title, description, pubDate, tags, coverImage, coverAlt } = Astro.props;
     <Navbar isBlogPost={true} />
     <main data-pagefind-body>
         <BlogPostHero {title} {pubDate} {coverImage} {coverAlt} />
-        <article class="wrapper blog-post-styles mx-auto">
-            <slot />
-        </article>
+        <div class="wrapper">
+            <article class="typography mx-auto">
+                <slot />
+            </article>
+        </div>
     </main>
 </BaseLayout>

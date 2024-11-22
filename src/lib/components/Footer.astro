@@ -1,0 +1,32 @@
+---
+const footer = [
+    { text: "Privacy", link: "/privacy" },
+    { text: "RSS Feed", link: "/rss.xml" },
+];
+
+function getCurrentYear() {
+    return new Date().getFullYear();
+}
+---
+
+<footer class="bg-stone-900 py-4">
+    <div class="wrapper grid gap-4 sm:grid-cols-2">
+        <ul class="flex flex-wrap items-center justify-evenly sm:justify-start">
+            {
+                footer.map((item) => (
+                    <li>
+                        <a
+                            href={item.link}
+                            class="sm:mr-8 md:mr-12 text-neutral-100"
+                        >
+                            {item.text}
+                        </a>
+                    </li>
+                ))
+            }
+        </ul>
+        <div class="text-neutral-100 text-center sm:text-right">
+            Copyright © {getCurrentYear} | LoneVoice.in
+        </div>
+    </div>
+</footer>
