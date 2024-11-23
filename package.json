@@ -11,9 +11,10 @@
     "clean": "rm -rf dist .astro"
   },
   "dependencies": {
-    "astro": "^4.16.13"
+    "astro": "^4.16.14"
   },
   "devDependencies": {
+    "@astrojs/rss": "^4.0.9",
     "@fontsource/alegreya": "^5.1.1",
     "@fontsource/alegreya-sans": "^5.1.1",
     "@tailwindcss/typography": "^0.5.15",
