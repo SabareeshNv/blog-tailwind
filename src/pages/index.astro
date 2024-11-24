@@ -18,9 +18,10 @@ const description = "Welcome to my blog";
 <PageLayout {title} {description}>
 	<div class="wrapper">
 		<section class="my-fluid">
-			<h1 class="section-heading font-serif text-xl mb-4">
-				LATEST &ThinSpace; POSTS
-			</h1>
+			{
+				/* <h1 class="section-heading font-serif text-xl mb-6">
+				LATEST &ThinSpace; POSTS </h1> */
+			}
 
 			<div class="grid gap-6 md:grid-cols-2">
 				<div class="first-post">
@@ -44,8 +45,8 @@ const description = "Welcome to my blog";
 
 		{
 			isEmpty > 0 ? (
-				<section class="my-fluid">
-					<h1 class="section-heading font-serif text-xl mb-4">
+				<section class="my-fluid mt-20">
+					<h1 class="section-heading font-serif text-xl mb-6">
 						OLDER &ThinSpace; POSTS
 					</h1>
 					<div class="grid lg:grid-cols-4 gap-6">

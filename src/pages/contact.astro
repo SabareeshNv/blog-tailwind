@@ -1,0 +1,20 @@
+---
+import { Image } from "astro:assets";
+import PageLayout from "@layouts/PageLayout.astro";
+import underConstruction from "@images/under-construction.png";
+
+const title = "Contact - Under construction | Sabari's Journal";
+const description = "Contact - Page Under construction | Sabari's Journal";
+---
+
+<PageLayout {title} {description}>
+    <main class="wrapper my-fluid">
+        <div class="max-w-md mx-auto">
+            <Image
+                src={underConstruction}
+                alt="page under construction"
+                class="mx-auto w-80"
+            />
+        </div>
+    </main>
+</PageLayout>

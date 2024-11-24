@@ -1,6 +1,6 @@
 .typography {
     @apply prose prose-lg text-gray-950 marker:text-gray-900;
-    @apply prose-headings:font-serif prose-headings:font-medium;
+    @apply prose-headings:font-serif prose-headings:font-semibold prose-headings:leading-heading;
     @apply prose-a:underline prose-a:underline-offset-4 prose-a:decoration-2 prose-a:text-red-700 prose-a:italic;
 
     overflow-wrap: break-word;
