@@ -9,7 +9,7 @@ function getCurrentYear() {
 }
 ---
 
-<footer class="bg-stone-900 py-4">
+<footer class="bg-gray-950 py-4">
     <div class="wrapper grid gap-4 sm:grid-cols-2">
         <ul class="flex flex-wrap items-center justify-evenly sm:justify-start">
             {
@@ -17,7 +17,7 @@ function getCurrentYear() {
                     <li>
                         <a
                             href={item.link}
-                            class="sm:mr-8 md:mr-12 text-neutral-100"
+                            class="sm:mr-8 md:mr-12 text-gray-100"
                         >
                             {item.text}
                         </a>
@@ -25,8 +25,8 @@ function getCurrentYear() {
                 ))
             }
         </ul>
-        <div class="text-neutral-100 text-center sm:text-right">
-            Copyright © {getCurrentYear} | LoneVoice.in
+        <div class="text-gray-100 text-center sm:text-right">
+            Copyright © {getCurrentYear} | Sabari's Journal
         </div>
     </div>
 </footer>

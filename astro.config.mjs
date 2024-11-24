@@ -3,7 +3,7 @@ import pagefind from "astro-pagefind";
 
 // https://astro.build/config
 export default defineConfig({
-    site: "https://lonevoice.in",
+    site: "https://sabari-blog.netlify.app/",
     build: {
         assets: "_assets"
     },
