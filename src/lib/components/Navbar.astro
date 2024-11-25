@@ -9,7 +9,9 @@ const nav = [
 const { isBlogPost = false } = Astro.props;
 ---
 
-<header class={`py-4 ${isBlogPost ? "bg-white" : "bg-gray-950 "}`}>
+<header
+    class={`py-4 ${isBlogPost ? "bg-white" : "bg-gray-950 border-b-4 border-teal-200 shadow"}`}
+>
     <nav class="wrapper grid gap-4 sm:grid-cols-2">
         <div class="text-center sm:text-left">
             <a
@@ -25,7 +27,7 @@ const { isBlogPost = false } = Astro.props;
                     <li>
                         <a
                             href={item.link}
-                            class={` sm:ml-8 md:ml-12 text-lg ${isBlogPost ? "text-gray-950" : "text-gray-50"}`}
+                            class={` sm:ml-6 md:ml-10 text-lg ${isBlogPost ? "text-gray-950" : "text-gray-50"}`}
                         >
                             {item.text}
                         </a>
@@ -35,3 +37,9 @@ const { isBlogPost = false } = Astro.props;
         </ul>
     </nav>
 </header>
+
+<!-- <style>
+    header {
+        border-bottom: 5px solid #9ed689;
+    }
+</style> -->
