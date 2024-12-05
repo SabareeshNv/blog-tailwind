@@ -14,15 +14,16 @@ export default {
             },
             lineHeight: {
                 'heading': '1.2',
+            },
+            typography: {
+                DEFAULT: {
+                    css: {
+                        // 'blockquote p:first-of-type::before': false,
+                        // 'blockquote p:first-of-type::after': false,
+                        maxWidth: '75ch',
+                    }
+                }
             }
-            // typography: {
-            //     DEFAULT: {
-            //         css: {
-            //             'blockquote p:first-of-type::before': false,
-            //             'blockquote p:first-of-type::after': false,
-            //         }
-            //     }
-            // }
         }
     },
     plugins: [
