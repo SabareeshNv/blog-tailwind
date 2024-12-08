@@ -4,8 +4,8 @@ import { fetchAndFilterPosts } from "@utils/helpers";
 export async function GET(context) {
     const posts = await fetchAndFilterPosts()
     return rss({
-        title: "ThoughtPlay",
-        description: "Welcome to ThoughtPlay!",
+        title: "Lone Voice",
+        description: "Just a guy thinking out loud, unpopular opinions ofcourse!",
         site: context.site,
         items: posts.map((post) => ({
             title: post.data.title,
