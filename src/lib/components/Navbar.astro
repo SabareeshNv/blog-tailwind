@@ -9,9 +9,7 @@ const nav = [
 const { isBlogPost = false } = Astro.props;
 ---
 
-<header
-    class={`py-4 ${isBlogPost ? "bg-white" : "bg-gray-950 border-b-4 border-teal-200 shadow"}`}
->
+<header class={`py-4 ${isBlogPost ? "bg-white" : "bg-gray-950"}`}>
     <nav class="wrapper grid gap-4 sm:grid-cols-2">
         <div class="text-center sm:text-left">
             <a

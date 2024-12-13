@@ -20,7 +20,7 @@ const tagData: { name: string; slug: string }[] = generateTagData(uniqueTags);
             tagData.map((tag) => (
                 <a
                     href={`/tag/${tag.slug}`}
-                    class="bg-gray-100 py-2 px-1 rounded text-sm hover:bg-gray-200"
+                    class="py-2 px-2 text-sm outline outline-gray-900 outline-1 rounded hocus:bg-gray-900 hocus:text-gray-100 hocus:outline-gray-100 transition-colors"
                 >
                     {tag.name}
                 </a>

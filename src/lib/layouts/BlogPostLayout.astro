@@ -2,7 +2,7 @@
 import BaseLayout from "./BaseLayout.astro";
 import BlogPostHero from "@components/BlogPostHero.astro";
 import Navbar from "@components/Navbar.astro";
-
+import { slugify, unslugify } from "@utils/helpers";
 import "@styles/typography.css";
 
 const { title, description, pubDate, tags, coverImage, coverAlt } = Astro.props;
@@ -13,8 +13,25 @@ const { title, description, pubDate, tags, coverImage, coverAlt } = Astro.props;
     <main data-pagefind-body>
         <BlogPostHero {title} {pubDate} {coverImage} {coverAlt} />
         <div class="wrapper">
-            <article class="typography mx-auto">
+            <article class="typography mx-auto my-fluid">
                 <slot />
+                <section class="not-prose my-fluid">
+                    <h1 class="text-2xl xl:text-3xl font-serif section-heading">
+                        Tags
+                    </h1>
+                    <div class="flex flex-wrap gap-2">
+                        {
+                            tags.map((tag) => (
+                                <a
+                                    href={`/tag/${slugify(tag)}`}
+                                    class="py-2 px-2 text-sm outline outline-gray-900 outline-1 rounded hocus:bg-gray-900 hocus:text-gray-100 hocus:outline-gray-100 transition-colors"
+                                >
+                                    {unslugify(tag)}
+                                </a>
+                            ))
+                        }
+                    </div>
+                </section>
             </article>
         </div>
     </main>

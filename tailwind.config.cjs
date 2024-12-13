@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 const defaultTheme = require('tailwindcss/defaultTheme')
+const plugin = require('tailwindcss/plugin')
 
 export default {
     content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
@@ -15,6 +16,11 @@ export default {
             lineHeight: {
                 'heading': '1.2',
             },
+            colors: {
+                'brand': '#40500e',
+                'accent-1': '#e5ebb5',
+                'accent-2': '#ced7ab'
+            },
             typography: {
                 DEFAULT: {
                     css: {
@@ -28,5 +34,8 @@ export default {
     },
     plugins: [
         require('@tailwindcss/typography'),
+        plugin(function({ addVariant }) {
+            addVariant('hocus', ['&:hover', '&:focus'])
+          }),
     ],
 };

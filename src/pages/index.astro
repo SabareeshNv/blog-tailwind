@@ -12,17 +12,13 @@ const restOfPosts = posts.slice(5);
 const isEmpty = Object.keys(restOfPosts).length;
 
 const title = "Lone Voice";
-const description = "Just a guy thinking out loud, unpopular opinions ofcourse!";
+const description =
+	"Just a guy thinking out loud, unpopular opinions ofcourse!";
 ---
 
 <PageLayout {title} {description}>
 	<div class="wrapper">
 		<section class="my-fluid">
-			{
-				/* <h1 class="section-heading font-serif text-xl mb-6">
-				LATEST &ThinSpace; POSTS </h1> */
-			}
-
 			<div class="grid gap-6 md:grid-cols-2">
 				<div class="first-post">
 					{
@@ -58,7 +54,10 @@ const description = "Just a guy thinking out loud, unpopular opinions ofcourse!"
 							</div>
 						</div>
 						<aside data-pagefind-ignore>
-							<Search className="py-4 font-sans" uiOptions={{ showImages: false }} />
+							<Search
+								className="py-4 font-sans"
+								uiOptions={{ showImages: false }}
+							/>
 							<TagCloud />
 						</aside>
 					</div>
